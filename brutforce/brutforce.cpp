@@ -12,9 +12,20 @@ char arr[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 		       'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
 		       'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
-char test_password_arr[] = { 'z', 'z', 'z', 'z', 'z', 'z' };
+char test_password_arr[] = { 'z' };
+string password_test = "PUT";
 
 unsigned long long iteration = 0;
+
+string convertToString(char* arr, int size)
+{
+	int i;
+	string s = "";
+	for (i = 0; i < size; i++) {
+		s = s + arr[i];
+	}
+	return s;
+}
 
 bool equalArr(char arr_test[], char arr_answer[], int sizeArr) {
 	for (int i = 0; i < sizeArr; i++)
@@ -30,17 +41,18 @@ bool oneSymbol(int sizeArr, int testSizeArr) {
 	for (int a = 0; a < sizeArr; a++)
 	{
 		iteration++;
-		//Sleep(500);
-		//cout << "Password = " << arr[a] << endl;
-		char answer[] = { arr[a] };
 
-		if (equalArr(test_password_arr, answer, testSizeArr))
+		char answer[] = { arr[a] };
+		//int a_size = sizeof(arr) / sizeof(char);
+		string s_answer = convertToString(answer, 1);
+
+		if (password_test == s_answer)
 		{
 			cout << endl;
 			cout << endl;
 			cout << endl;
 			cout << "SUCCESS !!!" << endl;
-			cout << "Password = " << arr[a] << endl;
+			cout << "Password = " << s_answer << endl;
 			return true;
 		}
 	}
@@ -54,16 +66,17 @@ bool twoSymbols(int sizeArr, int testSizeArr) {
 		{
 			iteration++;
 			//Sleep(500);
-			//cout << "Password = " << arr[a] << arr[b] << endl;
-			char answer[] = { arr[a], arr[b] };
 
-			if (equalArr(test_password_arr, answer, testSizeArr))
+			char answer[] = { arr[a], arr[b] };
+			string s_answer = convertToString(answer, 2);
+
+			if (password_test == s_answer)
 			{
 				cout << endl;
 				cout << endl;
 				cout << endl;
 				cout << "SUCCESS !!!" << endl;
-				cout << "Password = " << arr[a] << arr[b] << endl;
+				cout << "Password = " << s_answer << endl;
 				return true;
 			}
 		}
@@ -79,17 +92,17 @@ bool threeSymbols(int sizeArr, int testSizeArr) {
 			for (int c = 0; c < sizeArr; c++)
 			{
 				iteration++;
-				//Sleep(500);
-				//cout << "Password = " << arr[a] << arr[b] << arr[c] << endl;
+				
 				char answer[] = { arr[a], arr[b], arr[c] };
+				string s_answer = convertToString(answer, 3);
 
-				if (equalArr(test_password_arr, answer, testSizeArr))
+				if (password_test == s_answer)
 				{
 					cout << endl;
 					cout << endl;
 					cout << endl;
 					cout << "SUCCESS !!!" << endl;
-					cout << "Password = " << arr[a] << arr[b] << arr[c] << endl;
+					cout << "Password = " << s_answer << endl;
 					return true;
 				}
 			}
@@ -109,16 +122,17 @@ bool fourSymbols(int sizeArr, int testSizeArr) {
 				{
 					iteration++;
 					//Sleep(500);
-					//cout << "Password = " << arr[a] << arr[b] << arr[c] << arr[d] << endl;
+					
 					char answer[] = { arr[a], arr[b], arr[c], arr[d] };
+					string s_answer = convertToString(answer, 4);
 
-					if (equalArr(test_password_arr, answer, testSizeArr))
+					if (password_test == s_answer)
 					{
 						cout << endl;
 						cout << endl;
 						cout << endl;
 						cout << "SUCCESS !!!" << endl;
-						cout << "Password = " << arr[a] << arr[b] << arr[c] << arr[d] << endl;
+						cout << "Password = " << s_answer << endl;
 						return true;
 					}
 				}
@@ -140,17 +154,17 @@ bool fiveSymbols(int sizeArr, int testSizeArr) {
 					for (int e = 0; e < sizeArr; e++)
 					{
 						iteration++;
-						//Sleep(500);
-						//cout << "Password = " << arr[a] << arr[b] << arr[c] << arr[d] << endl;
-						char answer[] = { arr[a], arr[b], arr[c], arr[d], arr[e] };
 
-						if (equalArr(test_password_arr, answer, testSizeArr))
+						char answer[] = { arr[a], arr[b], arr[c], arr[d], arr[e] };
+						string s_answer = convertToString(answer, 5);
+
+						if (password_test == s_answer)
 						{
 							cout << endl;
 							cout << endl;
 							cout << endl;
 							cout << "SUCCESS !!!" << endl;
-							cout << "Password = " << arr[a] << arr[b] << arr[c] << arr[d] << arr[e] << endl;
+							cout << "Password = " << s_answer << endl;
 							return true;
 						}
 					}
@@ -176,17 +190,17 @@ bool sixSymbols(int sizeArr, int testSizeArr) {
 						for (int f = 0; f < sizeArr; f++)
 						{
 							iteration++;
-							//Sleep(500);
-							//cout << "Password = " << arr[a] << arr[b] << arr[c] << arr[d] << endl;
+							
 							char answer[] = { arr[a], arr[b], arr[c], arr[d], arr[e], arr[f] };
+							string s_answer = convertToString(answer, 6);
 
-							if (equalArr(test_password_arr, answer, testSizeArr))
+							if (password_test == s_answer)
 							{
 								cout << endl;
 								cout << endl;
 								cout << endl;
 								cout << "SUCCESS !!!" << endl;
-								cout << "Password = " << arr[a] << arr[b] << arr[c] << arr[d] << arr[e] << arr[f] << endl;
+								cout << "Password = " << s_answer << endl;
 								return true;
 							}
 						}
@@ -200,8 +214,6 @@ bool sixSymbols(int sizeArr, int testSizeArr) {
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	//string test_password = "123";
-	//string password = "123";
 	cout << "start..." << endl;
 	cout << endl;
 
@@ -245,6 +257,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		return 0;
 	}
 
+	system("pause");
 	return 0;
 }
 
